@@ -1,2 +1,1 @@
-#!/bin/sh
-ip link | awk '/link\/ether/ {print $2}'
+ifconfig | grep "ether" | cut -d ' ' -f 2
