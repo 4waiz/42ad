@@ -1,33 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_is_negative.c                                   :+:      :+:    :+:   */
+/*   ft_putstr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: awaahmed <awaahmed@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/16 12:40:17 by awaahmed          #+#    #+#             */
-/*   Updated: 2025/04/16 14:29:12 by awaahmed         ###   ########.fr       */
+/*   Created: 2025/04/18 16:11:59 by awaahmed          #+#    #+#             */
+/*   Updated: 2025/04/18 16:16:28 by awaahmed         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 
-void	ft_is_negative(int n)
+void	ft_putstr(char *str)
 {
-	if (n >= 0)
+	int	i;
+
+	i = 0;
+	while (str[i])
 	{
-		write(1, "P", 1);
-	}
-	else
-	{
-		write(1, "N", 1);
+		write(1, &str[i], 1);
+		i++;
 	}
 }
-// int main(void) {
-// 	ft_is_negative(3);
-// 	write(1,"\n",1);
-// 	ft_is_negative(-3);
-// 	write(1,"\n",1);
-// 	ft_is_negative(1);
-// 	write(1,"\n",1);
+
+// int main(void)
+// {
+//     char *msg = "Hello, 42!\n";
+//     ft_putstr(msg);
+//     return (0);
 // }

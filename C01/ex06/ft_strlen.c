@@ -1,49 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putnbr.c                                        :+:      :+:    :+:   */
+/*   ft_strlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: awaahmed <awaahmed@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/16 12:41:07 by awaahmed          #+#    #+#             */
-/*   Updated: 2025/04/16 14:31:54 by awaahmed         ###   ########.fr       */
+/*   Created: 2025/04/18 16:19:42 by awaahmed          #+#    #+#             */
+/*   Updated: 2025/04/18 16:39:12 by awaahmed         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
-
-void	ft_putchar(char c)
+int	ft_strlen(char *str)
 {
-	write(1, &c, 1);
-}
+	int	i;
 
-void	ft_putnbr(int nb)
-{
-	if (nb == -2147483648)
-	{
-		ft_putnbr(nb / 10);
-		ft_putchar('8');
-	}
-	else if (nb < 0)
-	{
-		ft_putchar('-');
-		ft_putnbr(-nb);
-	}
-	else
-	{
-		if (nb > 9)
-		{
-			ft_putnbr(nb / 10);
-		}
-		ft_putchar(48 + nb % 10);
-	}
+	i = 0;
+	while (str[i] != '\0')
+		i++;
+	return (i);
 }
+// #include <unistd.h>
+// void ft_putnbr(int n)
+// {
+//     if (n >= 10)
+//         ft_putnbr(n / 10);
+//     char c = (n % 10) + '0';
+//     write(1, &c, 1);
+// }
 // int main(void)
 // {
-//     ft_putnbr(42);
+//     char *msg = "Hello, 42!";
+//     int len = ft_strlen(msg);
+//     write(1, "Length: ", 8);
+//     ft_putnbr(len);  // Output: 10
 //     write(1, "\n", 1);
-//     ft_putnbr(-2147483648);
-//     write(1, "\n", 1);
-//     ft_putnbr(0);
-//     write(1, "\n", 1);
+//     return (0);
 // }
