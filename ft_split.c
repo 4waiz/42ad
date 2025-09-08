@@ -6,7 +6,7 @@
 /*   By: awaahmed <awaahmed@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/18 20:17:44 by awaahmed          #+#    #+#             */
-/*   Updated: 2025/08/18 20:17:46 by awaahmed         ###   ########.fr       */
+/*   Updated: 2025/08/31 16:23:03 by awaahmed         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ static int	ft_count_words(const char *s, char c)
 	return (words);
 }
 
-static char	*word_splitter(const char *s, char c)
+static char	*split_word(const char *s, char c)
 {
 	int		i;
 	char	*word;
@@ -54,7 +54,7 @@ static char	*word_splitter(const char *s, char c)
 	return (word);
 }
 
-static void	ft_free(char **words, int count)
+static void	free_words(char **words, int count)
 {
 	int	i;
 
@@ -69,10 +69,10 @@ static void	ft_free(char **words, int count)
 
 static char	**ft_extract_word(const char *s, char c, char **words, int j)
 {
-	words[j] = word_splitter(s, c);
+	words[j] = split_word(s, c);
 	if (!words[j])
 	{
-		ft_free(words, j);
+		free_words(words, j);
 		return (NULL);
 	}
 	return (words);

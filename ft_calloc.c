@@ -6,28 +6,23 @@
 /*   By: awaahmed <awaahmed@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/14 14:00:51 by awaahmed          #+#    #+#             */
-/*   Updated: 2025/08/16 17:39:17 by awaahmed         ###   ########.fr       */
+/*   Updated: 2025/09/07 10:11:01 by awaahmed         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_calloc(size_t count, size_t size)
+void	*ft_calloc(size_t nmemb, size_t size)
 {
-	void	*ptr;
+	size_t	sum;
+	void	*p;
 
-	if (count > 0 && SIZE_MAX / count < size)
+	if (nmemb != 0 && size > SIZE_MAX / nmemb)
 		return (NULL);
-	if (count == 0 || size == 0)
-	{
-		ptr = malloc(1);
-		if (!ptr)
-			return (NULL);
-		return (ptr);
-	}
-	ptr = malloc(count * size);
-	if (!ptr)
+	sum = nmemb * size;
+	p = malloc(sum);
+	if (!p)
 		return (NULL);
-	ft_bzero(ptr, count * size);
-	return (ptr);
+	ft_memset(p, 0, sum);
+	return (p);
 }

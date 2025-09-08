@@ -6,12 +6,11 @@
 /*   By: awaahmed <awaahmed@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/14 14:00:43 by awaahmed          #+#    #+#             */
-/*   Updated: 2025/08/18 20:20:10 by awaahmed         ###   ########.fr       */
+/*   Updated: 2025/09/08 20:37:48 by awaahmed         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <limits.h>
 
 int	ft_atoi(const char *ptr)
 {

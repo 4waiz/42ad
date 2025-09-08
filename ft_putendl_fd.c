@@ -6,7 +6,7 @@
 /*   By: awaahmed <awaahmed@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/18 20:19:10 by awaahmed          #+#    #+#             */
-/*   Updated: 2025/08/18 20:19:12 by awaahmed         ###   ########.fr       */
+/*   Updated: 2025/08/29 16:02:56 by awaahmed         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,8 @@
 
 void	ft_putendl_fd(char *s, int fd)
 {
-	size_t	len;
-
-	len = ft_strlen(s);
-	write(fd, s, len);
+	if (!s)
+		return ;
+	write(fd, s, ft_strlen(s));
 	write(fd, "\n", 1);
 }

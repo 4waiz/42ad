@@ -6,13 +6,13 @@
 /*   By: awaahmed <awaahmed@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/18 20:18:06 by awaahmed          #+#    #+#             */
-/*   Updated: 2025/08/18 20:20:23 by awaahmed         ###   ########.fr       */
+/*   Updated: 2025/08/31 09:40:38 by awaahmed         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int	ft_decimal_places(long n)
+static int	ft_values(long n)
 {
 	int	i;
 
@@ -30,7 +30,7 @@ static int	ft_decimal_places(long n)
 	return (i);
 }
 
-static char	*mount_str(char *str, long l, int i)
+static char	*ft_allnumber(char *str, long l, int i)
 {
 	if (l == 0)
 	{
@@ -57,10 +57,10 @@ char	*ft_itoa(int n)
 	long	l;
 
 	l = n;
-	i = ft_decimal_places(l);
+	i = ft_values(l);
 	str = (char *)malloc(sizeof(char) * (i + 1));
 	if ((!str))
 		return (NULL);
 	str[i--] = '\0';
-	return (mount_str(str, l, i));
+	return (ft_allnumber(str, l, i));
 }
